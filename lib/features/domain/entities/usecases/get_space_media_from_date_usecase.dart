@@ -4,13 +4,14 @@ import 'package:sfmc_app/core/usecase/usecase.dart';
 import 'package:sfmc_app/features/domain/entities/space_midia_entity.dart';
 import 'package:sfmc_app/features/domain/repositories/space_midia_repository.dart';
 
-class GetSpaceMediaUseCase implements Usecase<SpaceMediaEntity, NoParams> {
+class GetSpaceMediaFromDateUseCase
+    implements Usecase<SpaceMediaEntity, DateTime> {
   final ISpaceMediaRepository repository;
 
-  GetSpaceMediaUseCase({required this.repository});
+  GetSpaceMediaFromDateUseCase({required this.repository});
 
   @override
-  Future<Either<Failure, SpaceMediaEntity>> call(NoParams params) async {
-    return await repository.getSpaceMidiaFromDate();
+  Future<Either<Failure, SpaceMediaEntity>> call(DateTime date) async {
+    return await repository.getSpaceMidiaFromDate(date);
   }
 }
