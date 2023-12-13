@@ -11,3 +11,5 @@ class NoParams extends Equatable {
   // TODO: implement props
   List<Object?> get props => [];
 }
+
+final tNoParams = NoParams();
